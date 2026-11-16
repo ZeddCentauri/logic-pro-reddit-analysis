@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Pro — Community Insights</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --text: #f5f5f7;
+            --gray: #86868b;
+            --blue: #2997ff;
+            --card: #1d1d1f;
+        }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+        header {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+        h1 {
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            margin: 0 0 10px 0;
+        }
+        h2 {
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--gray);
+            margin: 0;
+        }
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .card {
+            background-color: var(--card);
+            border-radius: 18px;
+            padding: 40px;
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: scale(1.02);
+        }
+        .card-number {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+        .card-score {
+            font-size: 17px;
+            color: var(--blue);
+            margin-bottom: 24px;
+        }
+        .quote {
+            font-size: 19px;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--gray);
+            margin: 40px 0;
+            border-left: 2px solid #333;
+            padding-left: 20px;
+        }
+        .quote span {
+            display: block;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--text);
+            margin-top: 10px;
+        }
+        .section-title {
+            font-size: 40px;
+            font-weight: 600;
+            text-align: center;
+            margin: 80px 0 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Logic Pro Insights</h1>
+    <h2>3 years of community feedback. 28,000 threads analyzed.</h2>
+</header>
+
+<div class="container">
+    <div class="section-title">Top Feature Requests</div>
+    <div class="grid" id="rankings"></div>
+
+    <div class="section-title">The Legacy Plugin Debate</div>
+    
+    <div class="quote">
+        "Ultrabeat is extremely and surprisingly powerful, definitely way ahead of its time. The main issue is the spaceship UI has never been updated and better things have come along. I’m surprised it got any bug fixes at all especially now in 2026."
+        <span>— u/bambaazon (April 2026)</span>
+    </div>
+
+    <div class="quote">
+        "Sculpture is one of the greatest synths of all time. It's unreal how deep you can go with thing. But I'd sure welcome a UI refresh. The design makes a synth that can be conceptually complex unnecessarily complex in functionality."
+        <span>— u/BlackSwanMarmot (August 2025)</span>
+    </div>
+
+    <div class="quote">
+        "So no UI updates for the legacy plug-ins? Seems weird that the iPad versions are easier to work with than the ones on the Mac."
+        <span>— u/Otherwise_Intern_817 (October 2026)</span>
+    </div>
+    
+    <div class="section-title">Reactions to "Liquid Glass" & Logic 13</div>
+
+    <div class="quote">
+        "I can't believe they did not take the Liquid Glass change as an opportunity to completely overhaul every plugin and build in feature to be uniform in design. Instead we have yet another UI design lumped on top of the already 4 other UI styles from Logic 8, 9, X and upwards. For an Apple application it really is a mess."
+        <span>— u/craigrusse11 (November 2026)</span>
+    </div>
+
+    <div class="quote">
+        "I guess I’m the only one who likes dark mode, Liquid Glass and rounded UI lol. I honestly wish it was even darker like the iPad version"
+        <span>— u/MicSolace (November 2026)</span>
+    </div>
+
+</div>
+
+<script>
+    fetch('feature_rankings.json')
+        .then(response => response.json())
+        .then(data => {
+            const grid = document.getElementById('rankings');
+            data.slice(0, 8).forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <div class="card-number">No. ${index + 1}</div>
+                    <h3 class="card-title">${item.category}</h3>
+                    <div class="card-score">Score: ${item.score} | Mentions: ${item.mentions}</div>
+                `;
+                grid.appendChild(card);
+            });
+        });
+</script>
+
+</body>
+</html>

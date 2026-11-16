@@ -1,0 +1,72 @@
+[
+  {
+    "score": 2030.2,
+    "mentions": 1278,
+    "threads": 767,
+    "comments": 511,
+    "category": "Stability & Bug Fixes"
+  },
+  {
+    "score": 1261.9,
+    "mentions": 794,
+    "threads": 417,
+    "comments": 377,
+    "category": "Performance, Multi-Core & Efficiency"
+  },
+  {
+    "score": 880.6,
+    "mentions": 580,
+    "threads": 154,
+    "comments": 426,
+    "category": "AI Features (Assistant, Stem Splitter)"
+  },
+  {
+    "score": 817.2,
+    "mentions": 537,
+    "threads": 270,
+    "comments": 267,
+    "category": "Mixer & Routing (VCA, Busses)"
+  },
+  {
+    "score": 762.8,
+    "mentions": 499,
+    "threads": 130,
+    "comments": 369,
+    "category": "UI Customization (Dark/Light Mode, Color, Liquid Glass)"
+  },
+  {
+    "score": 595.6,
+    "mentions": 394,
+    "threads": 115,
+    "comments": 279,
+    "category": "ARA2 Support & Third-Party Compatibility"
+  },
+  {
+    "score": 448.1,
+    "mentions": 298,
+    "threads": 95,
+    "comments": 203,
+    "category": "Browser & File Management"
+  },
+  {
+    "score": 356.1,
+    "mentions": 240,
+    "threads": 113,
+    "comments": 127,
+    "category": "Piano Roll & MIDI Editing"
+  },
+  {
+    "score": 269.2,
+    "mentions": 171,
+    "threads": 93,
+    "comments": 78,
+    "category": "Audio Editing (Warp, Flex, Fades)"
+  },
+  {
+    "score": 228.8,
+    "mentions": 143,
+    "threads": 81,
+    "comments": 62,
+    "category": "Legacy Plugin Redesign (ES2, Ultrabeat, EXS, Sculpture)"
+  }
+]

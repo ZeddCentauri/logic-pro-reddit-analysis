@@ -117,6 +117,11 @@
     <div class="section-title">The Legacy Plugin Debate</div>
     
     <div class="quote">
+        "DON'T YOU FUCKING TOUCH MY ES2, ITS GOT FUCKING SPINNING TRINARY DIALS WHERE ELSE AM I GONNA GET THIS QUALITY EXPERIENCE"
+        <span>— u/mrejfox (August 2025)</span>
+    </div>
+
+    <div class="quote">
         "Ultrabeat is extremely and surprisingly powerful, definitely way ahead of its time. The main issue is the spaceship UI has never been updated and better things have come along. I’m surprised it got any bug fixes at all especially now in 2026."
         <span>— u/bambaazon (April 2026)</span>
     </div>
@@ -130,6 +135,11 @@
         "So no UI updates for the legacy plug-ins? Seems weird that the iPad versions are easier to work with than the ones on the Mac."
         <span>— u/Otherwise_Intern_817 (October 2026)</span>
     </div>
+
+    <div class="quote">
+        "I’d prefer them to upgrade the UI to be more modern, but at the very least, could they upscale the existing graphics? Going 200% on a 4K monitor is like looking at 8-bit video games from the 80’s."
+        <span>— u/kidMSP (February 2026)</span>
+    </div>
     
     <div class="section-title">Reactions to "Liquid Glass" & Logic 13</div>
 
@@ -139,18 +149,34 @@
     </div>
 
     <div class="quote">
+        "The UI is dreadful and Steve Jobs would be turning in his grave at this being an apple product. For example on the new browser, the scroll bar shows over the little folder marker that shows if you selected a folder vs a file..."
+        <span>— u/scottp316 (November 2026)</span>
+    </div>
+
+    <div class="quote">
+        "Logic Pro needs not a redesign but a complete rewrite and streamlining, cut all the piled up redundancies and poor integration of legacy systems. There's an amazing DAW with an arsenal of instruments and effects to kill for, buried under layers of misguided nonsense."
+        <span>— u/predobrev (November 2026)</span>
+    </div>
+
+    <div class="quote">
         "I guess I’m the only one who likes dark mode, Liquid Glass and rounded UI lol. I honestly wish it was even darker like the iPad version"
         <span>— u/MicSolace (November 2026)</span>
+    </div>
+
+    <div class="quote">
+        "I won't upgrade my studio computer that I use for client projects for 6-12 months, but I moved my laptop to 13 to play around, and it seems like a fairly significant upgrade. I'm ambivalent to the design for the most part. Logic has looked very tired and was badly in need of an update, but I'm not sure this is a significant move forward."
+        <span>— u/iredcoat7 (November 2026)</span>
     </div>
 
 </div>
 
 <script>
-    fetch('feature_rankings.json')
+    // Changed path to point to data/feature_rankings.json since it's in the data folder
+    fetch('data/feature_rankings.json')
         .then(response => response.json())
         .then(data => {
             const grid = document.getElementById('rankings');
-            data.slice(0, 8).forEach((item, index) => {
+            data.slice(0, 10).forEach((item, index) => {
                 const card = document.createElement('div');
                 card.className = 'card';
                 card.innerHTML = `
@@ -160,7 +186,8 @@
                 `;
                 grid.appendChild(card);
             });
-        });
+        })
+        .catch(err => console.error("Error loading rankings:", err));
 </script>
 
 </body>
